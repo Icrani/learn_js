@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入移出事件</title>
+    <style>
+
+        .mouover{
+            background-color: antiquewhite;
+        }
+
+        div {
+            margin-left: 550px;
+            padding-top: 200px;
+        }
+
+        thead tr {
+            height: 30px;
+            background-color: skyblue;
+        }
+
+        tbody tr {
+            height: 30px;
+        }
+
+        tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            font-size: 12px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>代码</th>
+            <th>名称</th>
+            <th>最新公布净值</th>
+            <th>累计净值</th>
+            <th>前单位净值</th>
+            <th>净值增长率</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>003526</td>
+            <td>农村金辉</td>
+            <td>1.075</td>
+            <td>1.079</td>
+            <td>1.074</td>
+            <td>+0.047%</td>
+        </tr>
+        <tr>
+            <td>003526</td>
+            <td>农村金辉</td>
+            <td>1.075</td>
+            <td>1.079</td>
+            <td>1.074</td>
+            <td>+0.047%</td>
+        </tr>
+        <tr>
+            <td>003526</td>
+            <td>农村金辉</td>
+            <td>1.075</td>
+            <td>1.079</td>
+            <td>1.074</td>
+            <td>+0.047%</td>
+        </tr>
+        <tr>
+            <td>003526</td>
+            <td>农村金辉</td>
+            <td>1.075</td>
+            <td>1.079</td>
+            <td>1.074</td>
+            <td>+0.047%</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script>
+    // 1.获取元素 获取的是tbody 里面的多有行
+    var trs = document.querySelector('tbody').querySelectorAll('tr');
+    // 2.利用循环绑定注冊时间
+    for (var i = 0; i < trs.length; i++){
+        // 3.鼠标经过事件 onmouseover
+        trs[i].onmouseover = function () {
+            this.className = "mouover";
+        }
+        //4.鼠标离开
+        trs[i].onmouseout = function () {
+            this.className = "";
+        }
+    }
+
+
+</script>
+
+</html>

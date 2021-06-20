@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+1.使用函数内部的变量在函数执行完后，仍然存活在内存中（延长了局部变量的生命周期）
+2.让函数外部可以操作(读写)到函数内部的数据(变量/函数)
+
+    问题：
+        1. 函数执行完之后，函数内部声明的局部变量是否还存在
+        答：一般是不存在的，下面这段闭包代码在执行完后fun2()本身释放，对应的{a++;console.log(a)}还会因为后面实例的f而存在，如果f不存在，则会全部释放
+        2.在函数外部能直接访问函数内部的局部变量吗
+        答:不能，但是通过闭包可以让外部操作它
+-->
+</body>
+<script>
+    function fun1() {
+        let a = 2
+
+        return function fun2() {
+            a++
+            console.log(a)
+        }
+    }
+    let f = fun1()
+    f()
+    f()
+</script>
+</html>

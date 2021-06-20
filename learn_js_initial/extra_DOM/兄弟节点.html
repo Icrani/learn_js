@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟节点</title>
+</head>
+<body>
+<div>我是div</div>
+<span>我是span</span>
+</body>
+<script>
+    // 兄弟节点 node.nextSibling(下一个)    node.previousSibling(上一个)
+    var div = document.querySelector('div');
+    console.log(div.nextSibling);
+    console.log(div.previousSibling);
+
+    //直接查找元素节点
+    console.log(div.nextElementSibling);
+    console.log(div.previousElementSibling);
+</script>
+</html>

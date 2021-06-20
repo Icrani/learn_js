@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象</title>
+    <script>
+        //利用new Object创建对象
+        var obj = new Object();
+        obj.name = 'Icrani';
+        obj.age = 12;
+        obj.sayhello = function () {
+            console.log("hello~");
+        }
+        obj.sayhello();
+    </script>
+
+    <script>
+        //利用构造函数创建对象
+        //构造函数名首字母要大写
+        //不需要return 就可以返回结果
+        //调用构造函数必须使用new
+        //只要new Star（） 调用函数就可以创建一个对象 ldh{ }
+        function Star(uname,age,sex) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+        var ldh = new Star('刘德华',18,'男');
+        console.log(typeof ldh);
+        console.log(ldh.age);
+        console.log(ldh['sex']);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

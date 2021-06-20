@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器（回调函数）</title>
+</head>
+<body>
+
+</body>
+<script>
+    //定时器 setTimeout()
+    // 参数1：函数 或者时函数名
+
+    // 参数2：延迟时间是毫秒 ；如果省略默认是0，也就是立即执行
+
+    //页面中可能会有很多的定时器 所以我们经常给定时器加标识符(名字)
+    var timer1 = setTimeout(calback,3000);
+    var timer2 = setTimeout(calback,5000);
+    // setTimeout(function () {
+    //         alert(321);
+    // },2000)
+
+    function calback() {
+        alert('boom！');
+    }
+</script>
+<script>
+
+</script>
+</html>

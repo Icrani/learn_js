@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>执行</title>
+</head>
+<body>
+<div>1234</div>
+<script>
+    //1. 获取事件源
+    var div = document.querySelector('div');
+    //2. 绑定时间 注册事件
+    //     div.onclick
+    //3. 添加时间处理程序
+    div.onclick = function () {
+        console.log("我被选中了");
+    }
+</script>
+</body>
+</html>

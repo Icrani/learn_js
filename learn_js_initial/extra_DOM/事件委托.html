@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+<ul>
+    <li>71381289</li>
+    <li>71381289</li>
+    <li>71381289</li>
+    <li>71381289</li>
+    <li>71381289</li>
+    <li>71381289</li>
+    <li>71381289</li>
+    <li>71381289</li>
+</ul>
+</body>
+<script>
+    //事件委托也称为事件代理，在jQuery里被称为事件委派
+
+    //事件委托原理：
+    //不是每个子节点单独设置事件监听器，而是事件监听器设置在其父节点上，然后利用冒泡原理影响设置每个子节点
+    //事件委托的作用：
+    //只操作了一次DOM，提高了程序的性能
+
+    var ul = document.querySelector("ul");
+    ul.addEventListener("click", function (e) {
+        // alert('1111');
+        e.target.style.backgroundColor = 'pink';
+    })
+</script>
+</html>

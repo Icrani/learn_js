@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滚轮</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background: #c82333;
+        }
+    </style>
+</head>
+<body style="height: 2000px">
+<div id="box1"></div>
+</body>
+<script>
+    var box1 = document.querySelector('#box1')
+    //绑定鼠标滚轮事件
+
+    box1.addEventListener('mousewheel', gunlun)
+
+    function gunlun(e) {
+        //取消浏览器的默认事件
+        e.preventDefault();
+        //判断鼠标滚轮放心
+        // e.wheelDelta正负代表方向：+向上，-向下
+        // console.log(e.wheelDelta)
+        //火狐中使用detail
+        // console.log(e.detail)
+        if (e.wheelDelta > 0) {
+            //向上滚box1变短
+            box1.style.height = box1.clientHeight - 10 + 'px'
+        } else {
+            //向下滚box1变长
+            box1.style.height = box1.clientHeight + 10 + 'px'
+        }
+        //当滚轮滚动是，如果浏览器有滚动条，浏览器的默认行为需要取消
+    }
+
+
+</script>
+</html>

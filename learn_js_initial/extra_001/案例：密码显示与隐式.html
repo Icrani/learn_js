@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例：密码显示与隐式</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: none;
+            outline: none;
+        }
+
+        .box img {
+            width: 24px;
+            position: absolute;
+            top: 8px;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <label for="eye">
+        <img id="eye" src="../img/close.png" alt="">
+    </label>
+    <input type="password" id="pwd">
+</div>
+</body>
+<script>
+    var eye = document.getElementById('eye');
+    var pwd = document.getElementById('pwd');
+
+    var flog = 0;
+    eye.onclick = function () {
+        if (flog ===0){
+            pwd.type = 'text';
+            flog = 1;
+            eye.src = '../img/open.png'
+        }
+        else if (flog ===1){
+            pwd.type = 'password';
+            flog = 0;
+            eye.src = '../img/close.png'
+        }
+
+    }
+</script>
+</html>

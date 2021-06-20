@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘对象</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    document.addEventListener("keyup", function (e) {
+        // console.log(e);
+        // console.log(e.keyCode);
+        console.log(e.key);
+        //keyup和keydown事件不区分字母大小写 a和A得到的都是65
+        //keypress事件区分字母大小写 a和A得到的都是65
+    })
+    document.addEventListener("keypress", function (e) {
+        console.log(e.keyCode);
+        console.log(e.key);
+    })
+</script>
+</html>

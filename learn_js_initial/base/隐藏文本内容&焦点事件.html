@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏文本内容&焦点事件</title>
+</head>
+<body>
+<input class="one" type="text" placeholder="提示">
+</body>
+<script>
+    var test = document.querySelector('input');
+    text.onfocus = function () {
+        alert('获得聚焦');
+    }
+    test.onblur = function () {
+        alert("失去焦点");
+    }
+</script>
+
+</html>

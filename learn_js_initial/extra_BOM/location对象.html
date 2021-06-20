@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location对象</title>
+</head>
+<body>
+<!--<button>点击</button>-->
+<div></div>
+</body>
+<script>
+    //url: 统一资源定位符
+    //5秒后跳转页面
+
+    // var btn = document.querySelector("button");
+    // btn.addEventListener("click", function () {
+    //     // console.log(location.href);
+    //     location.href = 'https://www.bilibili.com/video/BV1k4411w7sV?p=92';
+    // })
+
+    var div = document.querySelector('div');
+
+    var timer = 5;
+
+    fun1();
+    setInterval(fun1, 1000)
+    function fun1() {
+        div.innerHTML = '您将在' + timer + '秒之后跳转到首页';
+        timer--;
+        if (timer === 0) {
+            location.href = 'https://www.bilibili.com';
+        }
+    }
+
+</script>
+</html>

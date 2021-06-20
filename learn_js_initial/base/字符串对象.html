@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串对象</title>
+    <script>
+        //基本包装类型
+        var str = 'andy';
+        // console.log(str.length);
+        //基本包装类型：把简单数据类型 包装成 复杂数据类型
+        //1 把简单数据类型包装为复杂数据类型
+        var temp = new String('andy');
+        //2 把临时变量的值 给 str
+        str = temp;
+        //3 销毁临时变量
+        temp = null;
+    </script>
+
+    <script>
+        //查找字符串中某个值出现的位置以及次数
+        var str1 = "abcdhlsandkbsadjk"
+        var index = str1.indexOf('a');
+        var num = 0;
+        // console.log(index);
+        while (index !== -1) {
+            console.log(index);
+            num += 1;
+            index = str1.indexOf('a', index + 1);
+        }
+        console.log('a出现的次数是：' + num);
+    </script>
+
+    <script>
+        //根据位置返回字符
+        //1 charAt() 根据位置返回字符
+        var str2 = 'andy';
+        console.log(str2.charAt(2));
+        //遍历所有的字符
+        for (var i = 0; i < str2.length; i++) {
+            console.log(str2.charAt(i));
+        }
+
+        //str[index] H5新增的 会有兼容性问题
+        console.log(str2[0]);
+
+        //2 charCodeAt(index) 返回的是ASCII值 目的：判断用户按下了那个键
+        console.log(str.charCodeAt(0));
+    </script>
+
+    <script>
+        var str3 = 'asbdjasvdjsavhdjashkldaskdhjnaslkh';
+        var o = {};
+        for (var i = 0; i < str3.length; i++) {
+            var chars = str3.charAt(i); //chars是 字符串的每一个字符
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+
+        //2 遍历对象
+        var ch = '';
+        var max = 0;
+        for (var k in o) {
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log('最多的字符是' + ch);
+    </script>
+
+    <script>
+        //字符串的拼接
+        // 1.concat('字符串1','字符串2');
+        var str4 = 'andy';
+        console.log(str4.concat('red'));
+        //2. sibstr('截取的起始位置','截取几个字符');
+        var str5 = '哈桑进口的拿了那您索德罗斯';
+        console.log(str5.substr(2, 2));
+    </script>
+
+    <script>
+        //1. 替换字符 replace('被替换的字符','替换为的字符') 只会替换第一个
+        var str6 = 'andy';
+        console.log(str6.replace('a', 'b'));
+
+        //替换一个字符串'asdbjasdvasjhdvasjh' 要求将里面所有的a换成*
+        var str_test = 'asdbjasdvasjhdvasjh';
+        while (str_test.indexOf('a') !== -1) {
+            str_test = str_test.replace('a', '*');
+        }
+        console.log(str_test);
+
+        //2. 字符转换为数组 split('分隔符')
+        var str7 = 'red,pink,blue';
+        console.log(str7.split(','));
+        var str8 = 'red&pink&blue';
+        console.log(str8.split('&'));
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location常见方法</title>
+</head>
+<body>
+<button>点击</button>
+</body>
+<script>
+    var btn = document.querySelector("button");
+    btn.addEventListener("click", function () {
+        //assign方法 可以记住前一个网页，所以能使用后退
+        // location.assign('https://www.bilibili.com');
+        //replace方法 不记录历史，不能使用后退
+        // location.replace('https://www.bilibili.com');
+        //reload方法 重新加载页面 参数为true则是强制刷新Ctrl+F5
+        location.reload();
+    })
+</script>
+</html>

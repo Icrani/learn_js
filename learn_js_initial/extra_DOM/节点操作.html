@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点操作</title>
+</head>
+<body>
+<div>
+<!--    节点的有点-->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box"></div>
+    <span class="erweima">×</span>
+</div>
+
+</body>
+<script>
+    // 父节点 parentNode
+    // 得到的是离元素最近的父节点  如果找不到父节点则返回null
+    var erweima = document.querySelector('.erweima');
+    console.log(erweima.parentNode);
+</script>
+<script>
+    // 子节点 childNodes（标准）
+    // 会包含文本节点
+    var ul = document.querySelector('ul');
+    console.log(ul.childNodes);
+
+    //children （非标准）实际开发常用
+    //不会包含文本节点
+    console.log(ul.children);
+</script>
+</html>

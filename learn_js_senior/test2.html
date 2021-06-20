@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../nodejs/node_global/node_modules/nrm/cli.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    function fun(n, o) {
+        console.log(o) //输出的是闭包的值
+        return {
+            fun:function (m) {
+                return fun(m,n)
+            }
+        }
+    }
+
+    let a = fun(0)
+    //使用相同的闭包
+    a.fun(1)
+    a.fun(4)
+    a.fun(5)
+    //2次调用
+    a.fun(2).fun(1)
+
+
+    // let b = fun(0).fun(1).fun(2)
+
+</script>
+</html>

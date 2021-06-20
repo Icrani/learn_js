@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let lessons = [
+        {
+            title: "媒体查询",
+            price: 12,
+            click: 12
+        },
+        {
+            title: "FLEX模型",
+            price: 18,
+            click: 20
+        },
+        {
+            title: "GRID栅格",
+            price: 130,
+            click: 2
+        },
+        {
+            title: "盒子模型详解",
+            price: 120,
+            click: 18
+        }
+    ]
+
+    function order(field, type = "asc") {
+        return function (a, b) {
+            if (type === "asc")
+                return a[field] > b[field] ? 1 : -1
+            return a[field] > b[field] ? -1 : 1
+        }
+    }
+
+    let ha = lessons.sort(order("price"))
+    console.table(ha)
+
+
+    let cl = lessons.sort(order("click"))
+    console.table(cl)
+
+    /*伪代码方式
+    lessons = {
+        sort:function (callback) {
+            callback(a,b)
+        }
+    }
+*/
+
+</script>
+</html>

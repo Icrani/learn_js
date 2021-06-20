@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>密码判断是否符合</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url("../img/close.png") no-repeat left center;
+            padding-left: 40px;
+        }
+
+        .wrong {
+            color: red;
+            background-image: url("../img/open.png");
+        }
+
+        .right {
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <input type="password" class="ipt">
+    <p class="message">请输入6-16位密码</p>
+</div>
+<script>
+    var ipt = document.querySelector('.ipt');
+    var message = document.querySelector('.message');
+
+    ipt.onblur = function () {
+        if (this.value.length < 6 || this.value.length > 16) {
+            message.className = "message wrong";
+            message.innerHTML = '您输入的位数不对要求6~16位';
+        } else {
+            message.className = "message right";
+            message.innerHTML = "您输入的格式正确"
+        }
+    }
+</script>
+</body>
+</html>

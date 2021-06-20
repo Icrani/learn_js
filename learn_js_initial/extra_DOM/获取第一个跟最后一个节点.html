@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取第一个跟最后一个节点</title>
+</head>
+<body>
+<div>
+    <!--    节点的有点-->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box"></div>
+    <span class="erweima">×</span>
+</div>
+
+</body>
+
+<script>
+    // 获取第一个子节点(不管是什么类型) firstchild
+    var ol = document.querySelector('ol');
+    console.log(ol.firstChild);
+
+    //获取最后一个节点
+    console.log(ol.lastChild);
+
+
+    //注意 必须在IE9以上才支持
+    //firstElementChild 返回第一个子元素节点
+    console.log(ol.firstElementChild);
+    //lastElementChild 返回最后一个子元素节点
+    console.log(ol.lastElementChild);
+
+
+    //实际开发写法
+
+    console.log(ol.children[0]);
+    console.log(ol.children[ol.children.length-1]);
+
+</script>
+</html>

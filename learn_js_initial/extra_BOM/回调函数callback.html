@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回调函数callback</title>
+</head>
+<body>
+<div class="adad">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>10</button>
+</div>
+</body>
+<script>
+    //利用定时器 5秒之后将数字按钮全部隐藏掉
+    var ad = document.querySelector('.adad');
+    setTimeout(function () {
+        ad.style.display = 'none';
+    },5000);
+</script>
+</html>

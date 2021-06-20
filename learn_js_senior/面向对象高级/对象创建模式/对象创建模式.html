@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+方式1：Object构造函数模式
+    *套路：先创建空Object对象，再动态添加属性/方法
+    *适用场景：起始时不确定对象内部数据
+    *问题：语句太多
+
+方法2：对象字面量模式
+    *套路：使用{}创建对象，同时指定属性/方法
+    *适用场景：起始时对象内部数据事确定的
+    *问题：如果创建多个对象，有重复代码
+
+方法3：工厂模式
+    *套路：通过工厂函数创建对象并返回
+    *适用场景：需要创建多个对象
+    *问题：对象没有一个具体的类型，都是Object类型
+-->
+</body>
+<script>
+    /*
+    对象：name:"Tom",age:"12"
+    */
+    //方式1：
+    let p = {}
+    p.name = "Tom"
+    p.age = 12
+    p.setName = function (name) {
+        this.name = name
+    }
+
+    //测试
+    p.setName("Icraio")
+
+    //方法2:
+    let q = {
+        name: 'Tom',
+        age: 12,
+        setName: function (name) {
+            this.name = name
+        }
+    }
+
+    //测试
+    console.log(q.name,q.age)
+    q.setName('icrani')
+    console.log(q.name)
+
+    //方法3：工厂模式
+    function createPerson(name,age) {
+        let obj = {
+            name: name,
+            age:age,
+            setName:function (name) {
+                this.name = name
+            }
+        }
+        return obj;
+    }
+
+    //测试(创建两个人)
+    let p1 = createPerson('Tom',12)
+    let p2 = createPerson('Bon',13)
+
+    //问题：没有一个具体的类型 不懂看对象创建模式(常用)
+    function createStruden(name,age) {
+        let stu = {
+            name:name,
+            age:age,
+            setName:function (name) {
+                this.name = name
+            }
+        }
+        return stu;
+    }
+</script>
+</html>

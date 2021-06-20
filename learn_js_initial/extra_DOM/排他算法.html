@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排他算法</title>
+    <style>
+        .btn {
+            width: auto;
+            height: auto;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+<div>
+    <button class="btn" value="0" onclick="bg_red(this)">按钮1</button>
+    <button class="btn" value="1" onclick="bg_red(this)">按钮2</button>
+    <button class="btn" value="2" onclick="bg_red(this)">按钮3</button>
+    <button class="btn" value="3" onclick="bg_red(this)">按钮4</button>
+    <button class="btn" value="4" onclick="bg_red(this)">按钮5</button>
+</div>
+</body>
+<script>
+
+    //只能有一个为红色（排他算法）
+    // var btns = document.querySelectorAll('button'); //i9y以下不支持
+    // var btns = document.getElementsByTagName('button');
+    // for (var i = 0; i < btns.length; i++) {
+    //     btns[i].onclick = function () {
+    //         // console.log(11);
+    //         for (var i =0;i<btns.length;i++){
+    //             btns[i].style.backgroundColor = '';
+    //         }
+    //         this.style.backgroundColor = "red";
+    //     }
+    // }
+
+    // //单独处理，互不干扰
+    // function bg_red(obj) {
+    //     var color = obj.value;
+    //     if (color === '0') {
+    //         obj.className = "btn red";
+    //         obj.value = '1';
+    //     } else {
+    //         obj.className = "btn";
+    //         obj.value = '0';
+    //     }
+    // }
+
+
+
+
+    function bg_red(obj) {
+        var num = obj.value;
+        // if (num ===0){
+        //     var color = "";
+        // }
+        // else {
+        //     color = 'red';
+        // }
+        var btns = document.getElementsByTagName("button");
+        for (var k in btns) {
+            btns[num].style.backgroundColor = 'red';
+        }
+    }
+
+
+</script>
+
+</html>

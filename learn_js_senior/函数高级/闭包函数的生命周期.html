@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+1.产生：在嵌套内部函数定义执行完时就产生了(不是在调用)
+2.死亡:在潜逃的内部函数成为垃圾对象时
+-->
+</body>
+<script>
+    function fun1() {
+        //此时闭包就已经产生了(函数提升，内部函数对象已经创建了)
+        let a = 2
+        return function fun2() {
+            a++
+            console.log(a)
+        }
+    }
+    let fun = fun1()
+    fun() //3
+    fun() //4
+
+    fun = null //闭包死亡(包含闭包的函数对象成为垃圾对象)
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerTest和innerHTML</title>
+</head>
+<body>
+<div></div>
+<p>
+    woshishen
+    <span>123</span>
+</p>
+<script>
+    //innerTest  和  innerHTML的区别
+    //1 innerTest    不识别HTML标签 (非标准)
+    var div = document.querySelector("div");
+    div.innerText = '今天是：2021';
+
+    //innerHTML 识别HTML标签  (W3C标准)(保留格式与空格)
+    div.innerHTML = '<strong>今天是：</strong>2021';
+
+
+    //这两个属性是可以读写的   可以获取元素里的内容
+    var p =document.querySelector('p');
+    console.log(p.innerText);
+    console.log(p.innerHTML);
+</script>
+</body>
+</html>

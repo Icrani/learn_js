@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+/*    let hd = {
+        user:'123',
+        get:function () {
+            return function () {
+                return this.user
+            }
+        }
+    }
+    console.log(hd.get())
+*/
+/*//解释
+* //上面最后打印输出相当于执行：
+* let a = hd.get() //这里相当于在window下调用
+* console.log(a())
+* */
+
+/*//初次优化
+let hd = {
+        user:'123',
+        get:function () {
+        let This = this
+            return function () {
+                return This.user
+            }
+        }
+    }
+    console.log(hd.get()())
+*/
+
+//新版JS可以使用箭头函数来处理这个问题
+    let hd = {
+        user:'123',
+        get:function () {
+            return  ()=> {
+                return this.user
+            }
+        }
+    }
+    console.log(hd.get()())
+</script>
+</html>

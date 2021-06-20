@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+    <script>
+        //添加数组元素的方法
+
+        //1 push() 添加到数组末尾
+        var test = [1, 2, 3];
+        test.push(4, 5);
+
+        //unshift() 添加到数组开头
+        test.unshift('red', 0);
+        console.log(test);
+    </script>
+
+    <script>
+        //删除数组元素的方法
+
+        //pop()删除数组最后一个元素
+        console.log(test.pop()); //返回的是删除的元素
+        console.log(test);
+
+        //shift 删除第一个元素
+        console.log(test.shift());
+        console.log(test);
+    </script>
+
+    <script>
+        //数组的筛选
+
+        //将小于2000的筛选出来
+        var arr = [1500, 1200, 2000, 2100, 1800];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < 2000) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+
+    <script>
+        //数组排序
+
+        // 翻转数据 reverse()
+        var arr = ['pink', 'red', 'blue'];
+        arr.reverse();
+        console.log(arr);
+
+        //数组排序（冒泡排序）sort(function(a,b){return a-b;})
+        var arr1 = [3, 4, 7, 1];
+        arr1.sort(function (a, b) {
+            return a - b; //升序的顺序排序
+            //return b - a; //降序的顺序排序
+        });
+        console.log(arr1);
+    </script>
+
+
+    <script>
+        //返回数组元素索引方法
+
+        //indexOf()只返回第一个满足条件的索引号
+        //倘若数组中不存在满足条件的值，则返回 -1
+        var arr2 = ['red', 'green', 'blue', 'pink', 'blue'];
+        console.log(arr2.indexOf('blue'));//输出2 从前往后查找
+        console.log(arr2.indexOf('blue'),3);//输出4 从索引为3的位置开始往后查找
+
+        console.log(arr2.lastIndexOf('blue'));//输出4 从后往前查找
+    </script>
+
+    <script>
+        //数组去重
+
+        //封装一个函数 unique 
+        function unique(arr3) {
+            var newArr3 = [];
+            for (var i = 0; i < arr3.length; i++) {
+                if (newArr3.indexOf(arr3[i]) === -1) {
+                    newArr3.push(arr3[i]);
+                }
+            }
+            return newArr3;
+        }
+
+        var demo = unique(['c', 'a', 's', 'f', 'f', 'f', 'q', 'r']);
+        console.log(demo);
+    </script>
+    <script>
+        //将数组转换为字符串
+         var arr4 = [1,2,3];
+        console.log(arr.toString()); //1,2,3
+
+        // join(分隔符)
+        var arr5 = ['green','blue','pink'];
+        console.log(arr5.join());//green,blue,pink
+        console.log(arr5.join('-'));//green-blue-pink
+        console.log(arr5.join('&'));//green&blue&pink
+    </script>
+
+    <script>
+        //方法：concat() //连接两个或多个数组，不影响原数组  //返回一个新数组
+        //方法：slice() //数组截取slice(begin,end)  //返回被截取项目的新数组
+        //方法：splice() //数组删除splice(第几个开始，要删除的个数) //返回被删除项目的新数组 注：该方法会影响原数组
+    </script>
+</head>
+<body>
+</body>
+</html>

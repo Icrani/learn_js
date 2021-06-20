@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            position: relative;
+        }
+        button{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<button>1</button>
+<button>2</button>
+</body>
+<script>
+    let btns = document.querySelectorAll('button')
+    btns.forEach(function (item) {
+        let bind = false
+        item.addEventListener('click', function () {
+            if (!bind){
+                bind = true
+                let left = 1
+                setInterval(function () {
+                    item.style.left = left++ + 'px'
+                    // item.style.backgroundColor = 'pink'
+                },100)
+            }
+        })
+    })
+</script>
+</html>

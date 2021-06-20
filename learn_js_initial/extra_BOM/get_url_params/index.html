@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+</body>
+<script>
+    console.log(location.search)//`?uname = icrani
+    //1 先去掉？ substr('起始的位置','截取几个字符')
+    var params = location.search.substr(1);//uname = icrani
+
+    //2 把字符串分割为数组 split('=');
+    var arr = params.split('=');
+
+    var div = document.querySelector("div");
+    div.innerHTML = arr[1]+'欢迎';
+</script>
+</html>

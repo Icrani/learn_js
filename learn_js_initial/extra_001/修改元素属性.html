@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改元素属性</title>
+</head>
+<body>
+<button id="first">first</button>
+<button id="second">second</button>
+<br>
+<img src="../img/1.jpg" alt="" title="first">
+
+<script>
+    //修改元素属性
+    //1 获取元素
+    var btn_first = document.getElementById('first');
+    var btn_second = document.getElementById('second');
+    var img = document.querySelector('img');
+
+    //2 注册事件
+    btn_second.onclick = function () {
+        img.src = "../img/2.jpg";
+        img.title = "second";
+    }
+    btn_first.onclick = function () {
+        img.src = "../img/1.jpg";
+        img.title = "first";
+    }
+
+</script>
+</body>
+</html>

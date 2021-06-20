@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单发布留言</title>
+    <style>
+
+        ul{
+            margin-top: 50px;
+        }
+
+        li{
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245,209,243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        li a{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<textarea name="" id="" cols="30" rows="10"></textarea>
+<button>发布</button>
+<ul>
+    <li>12312321<a href='javascript:'>删除</a></li>
+</ul>
+</body>
+<script>
+    //阻止a标签跳转的方法：href中使用javasrtipt:;
+    //href='javascript:;'
+
+
+    var btn = document.querySelector('button');
+    var text = document.querySelector('textarea');
+    var ul = document.querySelector('ul');
+
+//原本
+    btn.onclick = function () {
+        if (text.value === '') {
+            alert("请输入内容");
+            return false;
+        } else {
+            var li = document.createElement('li');
+            li.innerHTML = text.value+'<a href=\'javascript:\'>删除</a>';
+            ul.appendChild(li);
+            ul.insertBefore(li, ul.children[0]);
+            text.value = '';
+
+            // var as = document.querySelectorAll('a');
+
+        }
+        var as = document.querySelectorAll('a');
+        for (var i = 0;i<as.length;i++){
+            as[i].onclick = function () {
+                ul.removeChild(this.parentNode)
+            }
+        }
+    }
+
+
+
+
+</script>
+</html>

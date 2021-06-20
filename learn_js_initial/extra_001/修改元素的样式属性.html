@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改元素的样式属性</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+<script>
+    //1 获取元素
+    var div = document.querySelector("div");
+    //2 注册事件 处理程序
+    div.onclick = function () {
+        //div.style
+        this.style.backgroundColor = "purple";
+        this.style.width = "300px";
+    }
+</script>
+</html>

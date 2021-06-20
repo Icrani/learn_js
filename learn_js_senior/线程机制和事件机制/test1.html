@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="num" placeholder="第几位">
+<button>开始计算</button>
+</body>
+<script>
+    // function fibonacci(n) {
+    //     return n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2)
+    // }
+    //
+    let input = document.querySelector('#num')
+    let btn = document.querySelector('button')
+    btn.addEventListener('click',function () {
+        let number = input.value
+
+        //创建一个Worker对象
+        let worker = new Worker("worker.js")
+        console.log('主线程向分线程发送数据'+number)
+        //向分线程发送消息
+        worker.postMessage(number)
+
+        //绑定接收消息的监听
+        worker.onmessage = function (event) {
+            alert(event.data)
+            console.log('主线程接收分线程返回的数据'+event.data)
+        }
+    })
+
+    // if (typeof(Worker) !== "undefined") {
+    //     // 是的！支持 Web worker！
+    //     // 一些代码.....
+    //     alert('y')
+    // } else {
+    //     // 抱歉！不支持 Web Worker！
+    //     alert('fal')
+    // }
+</script>
+</html>

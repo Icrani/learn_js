@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document.write</title>
+</head>
+<body>
+<button>点击</button>
+<p>abc</p>
+<div class="inner"></div>
+<div class="create"></div>
+</body>
+<script>
+
+    //window.onload 是等页面全部执行完毕了再去加载js代码
+    // window.onload = function () {
+    //
+    // }
+
+    //1 document.write是直接将内容写入页面的内容流， 但是文档流执行完毕，则他会导致页面全部重绘
+    // var btn = document.querySelector('button');
+    // btb.onclick = function () {
+    //     document.write('<div>123</div>')
+    // }
+
+    //2 innerHTML 创建元素
+    var inner = document.querySelector('.inner');
+    // for (var i = 0; i < 100; i++) {
+    //     inner.innerHTML += '<a href="javascript:">123</a>';
+    // }//直接拼接字符串的形式，需要开辟新的内存来使用，所以如果拼接次数过多耗时会过长
+    var arr = [];
+    for (var i = 0; i < 100; i++) {
+        arr.push('<a href="javascript:">123</a>');
+    }
+    inner.innerHTML = arr.join(' ');
+    //innerHTML采用数组拼接时效率更快 大约8毫秒(100个a标签)
+
+
+    //3 createElement 创建元素
+    // var create = document.querySelector('.create');
+    // var a = document.createElement('a');
+    // for (var i = 0; i < 100; i++) {
+    //     create.appendChild(a);
+    // }
+    //createElement 结构较为清晰 拼接效率较快 大约20毫秒(拼接100个a标签)
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除定时器</title>
+</head>
+<body>
+<button>停止</button>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    //清除定时器 clearTimeout
+    var timer1 = setTimeout(function () {
+        console.log('boom!')
+    },5000)
+
+    btn.addEventListener('click',function () {
+        clearTimeout(timer1);
+    })
+
+</script>
+</html>

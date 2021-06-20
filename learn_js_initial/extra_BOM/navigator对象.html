@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>navigator对象</title>
+</head>
+<body>
+
+</body>
+<script>
+    //navigator对象 可以获得包含有关浏览器的信息
+    //最常用的是userAgent
+
+    //移动端/PC端页面选择
+    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|woSBrowerNG|Webos|Symbian|Windows Phone)/i))) {
+        window.location.href = '';//移动
+    }else {
+        window.location.href = '';//PC
+    }
+</script>
+</html>

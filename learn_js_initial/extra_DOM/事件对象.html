@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div>123</div>
+<ul>
+    <li>abc</li>
+    <li>abc</li>
+    <li>abc</li>
+</ul>
+</body>
+<script>
+    //事件对象
+    var div = document.querySelector('div');
+    //div.onclick = function (event) {
+    //event就是一个事件对象 写到侦听函数的小括号里面 当形参来看
+    //事件对象只有有了事件才会存在，它是系统给我们自动创建的，不需要我们传递参数
+    //事件对象 是 我们事件的一系列相关数据的集合 跟事件相关的
+    //}
+
+    //保证兼容性的写法
+    // div.onclick = function (e) {
+    //     console.log(e)
+    //     console.log(window.event);
+    //     e = e||window.event;
+    // }
+    //事件对象的常见属性和方法
+    div.addEventListener("click", function (e) {
+        console.log(e.target);//target返回的是触发事件的对象(元素)
+        console.log(this);//this返回的是绑定事件的对象(元素)
+        console.log(e.currentTarget);//效果跟this一样 IE6-8不兼容
+    })
+
+    var ul = document.querySelector("ul");
+    ul.addEventListener("click", function (e) {
+        //e.target指向我们点击的那个对象
+        console.log(e.target);
+        //给ul绑定了事件 那么this就会指向ul
+        console.log(this);
+    })
+
+    //涉及IE6-8 兼容性处理
+    div.onclick = function (e) {
+        e = e ||window.event;
+        var target = e.target || e.srcElement;
+        console.log(target);
+    }
+</script>
+</html>

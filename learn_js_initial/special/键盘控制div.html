@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘控制div</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+</body>
+<script>
+    //
+    var box1 = document.querySelector("#box1");
+
+    var speed = 10
+    //修改dir来影响元素移动方向
+    var dir = 0
+
+    setInterval(function () {
+
+        switch (dir) {
+            case 37:
+                box1.style.left = box1.offsetLeft - speed + 'px'
+                break
+            case 39:
+                box1.style.left = box1.offsetLeft + speed + 'px'
+                break
+            case 38:
+                box1.style.top = box1.offsetTop - speed + 'px'
+                break
+            case 40:
+                box1.style.top = box1.offsetTop + speed + 'px'
+                break
+        }
+
+    }, 30)
+
+    document.addEventListener('keydown', keycrt)
+
+    function keycrt(e) {
+        // console.log(e.keyCode)
+        if (e.ctrlKey) {
+            speed = 30
+        }
+        dir = e.keyCode;
+    }
+    //当按钮松开时，div不动
+    function sto() {
+        dir = 0
+    }
+    document.addEventListener('keyup',sto)
+</script>
+</html>

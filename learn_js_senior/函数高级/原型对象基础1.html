@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function MyClass() {
+
+    }
+    MyClass.prototype.a = 123
+    const mc = new MyClass()
+    const mc2 = new MyClass()
+    //当访问一个对象的属性或方法时，它会在对象自身中寻找，如果有则直接使用，没有就去原型对象中寻找
+    console.log(mc.a) //输出123
+    console.log(mc)
+
+    //直接想mc中添加a属性
+    mc.a = '234'
+    console.log(mc.a)//输出234
+    console.log(mc)
+
+    //向原型中添加一个方法
+    function Person() {
+
+    }
+    Person.prototype.sayname = function() {
+        console.log("123456")
+    }
+
+    const pe = new Person()
+    pe.sayname()
+
+</script>
+</html>

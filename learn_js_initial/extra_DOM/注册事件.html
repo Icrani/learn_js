@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册事件</title>
+</head>
+<body>
+<button>传统注册事件</button>
+<button>方法监听注册事件</button>
+</body>
+<script>
+    //传统注册方式
+    //利用on开头的事件 onclick
+    //注册事件的唯一性
+    var btns = document.querySelectorAll('button');
+
+    //方法监听注册事件
+    btns[0].addEventListener('click',fun2);
+
+    function fun2(){
+        alert('1111');
+    }
+
+
+</script>
+</html>

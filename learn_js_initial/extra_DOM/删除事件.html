@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除事件</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+</body>
+<script>
+    var divs = document.querySelectorAll('div');
+
+    divs[0].addEventListener('click',fun1);
+    function fun1(){
+        alert('11111');
+        //传统方式删除事件
+        divs[0].onclick = null;
+    }
+
+    divs[1].addEventListener('click',fun2);
+    function fun2(){
+        alert('2222');
+        divs[1].removeEventListener('click',fun2);
+    }
+</script>
+</html>

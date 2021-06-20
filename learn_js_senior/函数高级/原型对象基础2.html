@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    function MyClass() {
+
+    }
+    MyClass.prototype.name = "123"
+    const mc = new MyClass()
+    mc.age = 19;
+    // console.log(mc.name)
+    //使用in检查对象中是否含有某个属性时，如果对象中没有但是原型中有，也会返回true
+    console.log("name" in mc)
+
+    //可以使用对象的hasOwnProperty()来检查对象自身中是否有该事项
+    console.log(mc.hasOwnProperty("name"),"name")
+    console.log(mc.hasOwnProperty("age"),"age")
+
+    /*原型对象也是对象，所以他也有原型，
+    * 当我们使用一个对象的属性或方法时，会在自身中寻找，
+    * 如果自身中有，则直接使用，
+    * 如果没有则去原型对象中寻找，如果原型对象中有，则使用，
+    * 如果没有没有，则去原型的原型中寻找*/
+    console.log(mc.hasOwnProperty("hasOwnProperty"),"hasOwnProperty")
+    //原型对象中也有__proto__属性，最终指向Object对象中的原型，如果没有则返回undefined
+    console.log(mc.__proto__.hasOwnProperty("hasOwnProperty"),"mc.__proto__.hasOwnProperty：原型对象中也没有该属性")
+    console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"))
+</script>
+</html>

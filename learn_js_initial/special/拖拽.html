@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: #c81623;
+            position: absolute;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+sdadasdasd
+<div class="box1"></div>
+
+<div class="box2"></div>
+</body>
+<script>
+    //拖拽div
+    //获取div
+
+
+    //老版本
+    // var div1 = document.querySelector(".box1");
+    // div1.onmousedown = function (e) {
+    //     //div的偏移量 鼠标.clentX - 元素.offsetLeft
+    //     //div的偏移量 鼠标.clentY - 元素.offsetTop
+    //     var ol = e.clientX - div1.offsetLeft;
+    //     var ot = e.clientY - div1.offsetTop;
+    //
+    //     document.onmousemove = function (e) {
+    //         var left = e.clientX - ol;
+    //         var top = e.clientY - ot;
+    //
+    //
+    //         div1.style.left = left + 'px'
+    //         div1.style.top = top + 'px'
+    //     }
+    //     document.onmouseup = function () {
+    //         document.onmousemove = null;
+    //         document.onmouseup = null;
+    //         alert(1);
+    //     }
+    //     //当拖拽一个网页中内容时，浏览器会默认去搜索引擎冲搜索内容，此时会导致拖拽功能异常(这个是浏览器提供的默认行为，不想要这个功能可以取消)
+    // }
+
+    //自己改
+    let div1 = document.querySelector(".box1")
+
+    function move(e) {
+        let x = e.pageX;
+        let y = e.pageY;
+        div1.style.left = x - 49 + 'px';
+        div1.style.top = y - 49 + 'px';
+    }
+
+    function m_up() {
+        document.removeEventListener('mousemove', move);
+        document.removeEventListener('mouseup',m_up)
+    }
+
+    div1.addEventListener('mousedown', function () {
+
+        //设置鼠标捕获状态
+
+        document.addEventListener('mousemove', move)
+        document.addEventListener('mouseup', m_up)
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+    <script >
+        //Date() 日期对象 是一个构造甘薯 必须使用new 来调用创建我们的日期对象
+        var arr = new Array(); //创建一个数组对象
+        var obj = new Object(); //创建一个对象实例
+        // 使用Date
+        var date = new Date();
+        console.log(date);
+
+        //使用数字类型输入时
+        var date1 = new Date(2019, 10, 1);
+        console.log(date1);//输出的时候会大一个月
+
+        //使用字符串类型输入时
+        var date2 = new Date('2019-10-1 8:8:9');
+        console.log(date2);
+    </script>
+
+    <script>
+        //格式化日期  年月日
+        var date = new Date();
+        console.log(date.getFullYear());//返回当前日期的年
+        console.log(date.getMonth() + 1);//返回月份 但是范围为0-11，所以当前月份需要额外加1
+        console.log(date.getDate()); //返回 几号
+        console.log(date.getDay());//返回周几 特殊：周日为0
+
+        //输出
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var day = date.getDay();
+        var arr = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+        console.log('今天是' + year + '年' + month + '月' + dates + '日 ' + arr[day]);
+    </script>
+
+    <script>
+        function getTimer() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTimer());
+    </script>
+
+    <script>
+        var date = new Date();
+        //现在时间距离1970年1月1号的总毫秒数
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        //简单写法
+        var date1 = +new Date();
+        console.log(date1);
+        //H5新增的方法
+        console.log(Date.now());
+    </script>
+
+</head>
+<body>
+</body>
+</html>

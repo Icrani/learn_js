@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="num" placeholder="第几位">
+<button>开始计算</button>
+</body>
+<script>
+    function fibonacci(n) {
+        return n <= 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2)
+    }
+
+    let input = document.querySelector('#num')
+    let btn = document.querySelector('button')
+    btn.addEventListener('click',function () {
+        let number = input.value
+        let result = fibonacci(number)
+        alert(result)
+    })
+</script>
+</html>

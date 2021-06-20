@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<!--
+    问：什么情况下必须使用 ['属性名']这种方式
+    1.属性名包含特殊字符: -  空格
+    2.变量名不确定
+-->
+
+</body>
+<script>
+    //1
+    var p = {}
+    //给p对象添加一个属性
+    p['content-type'] = '123'
+    console.log(p['content-type'])
+
+    //2
+    var prp = 'maA'
+    var value = 18
+    // p.prp = value //不能用
+    p[prp] = value
+
+</script>
+</html>

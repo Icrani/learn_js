@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用键盘事件</title>
+</head>
+<body>
+
+</body>
+<script>
+    //常用键盘事件
+    //1 keyup 按键弹起的时候触发
+    // document.onkeyup = function () {
+    //     console.log('弹起');
+    // }
+    document.addEventListener("keyup", function () {
+        console.log('弹起');
+    })
+
+    //2 keydown 按键按下的时候触发
+    document.addEventListener("keydown", function () {
+        console.log('down按下');
+    })
+
+    //3 keypress 按键按下的时候触发
+    //但是不识别功能键 比如：ctrl shift等
+    document.addEventListener("keypress", function () {
+        console.log('press按下');
+    })
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多选框全选以及取消全选</title>
+</head>
+<body>
+<div class="wrap">
+    <table>
+        <thead>
+        <tr>
+            <td><input type="checkbox" id="cb_all" value=""></td>
+            <td>全选</td>
+        </tr>
+        </thead>
+
+        <tbody id="j_tb">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>3</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script>
+    //获取元素
+    var all = document.getElementById('cb_all'); //全选按钮
+    var tab_j = document.getElementById('j_tb').getElementsByTagName('input');
+
+    //注册事件
+    all.onclick = function () {
+        // this.checked;
+        for (let i = 0; i < tab_j.length; i++) {
+            tab_j[i].checked = this.checked;
+        }
+    }
+
+    for (let i = 0; i < tab_j.length; i++) {
+        tab_j[i].onclick = function () {
+            var flag = true;
+            for (let i = 0; i < tab_j.length; i++) {
+                if (!tab_j[i].checked) {
+                    // all.checked = false;
+                    flag = false;
+                    break;
+                }
+            }
+            all.checked = flag;
+        }
+    }
+</script>
+</html>

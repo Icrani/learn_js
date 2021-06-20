@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history对象</title>
+</head>
+<body>
+<a href="./list.html">点我去list</a>
+<button>前进</button>
+</body>
+<script>
+    //back();  //后退功能
+    //forward();  //前进功能
+    //go(参数); //前进后退功能 参数是1 前进一个页面 如果是-1 后退一个页面
+
+    var btn = document.querySelector("button");
+    btn.addEventListener("click", function () {
+        history.forward();
+        // history.go(1);
+    })
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div index-desc="online">在线</div>
+<div index-desc="product">产品</div>
+</body>
+<script>
+    let divs = document.querySelectorAll('div')
+    divs.forEach(function (item) {
+        let desc = item.getAttribute('index-desc')
+        item.addEventListener('click', function () {
+            // console.log(item.getAttribute("index-desc"))
+            // console.log(item)
+            console.log(desc)
+            console.log(item)
+        })
+        item = null
+    })
+</script>
+</html>

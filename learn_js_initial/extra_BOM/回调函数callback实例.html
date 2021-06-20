@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回调函数callback</title>
+</head>
+<body>
+<div>
+    <span class="hour"></span>小时
+    <span class="minute"></span>分钟
+    <span class="second"></span>秒
+</div>
+</body>
+<script>
+    var hour = document.querySelector('.hour');
+    var minute = document.querySelector('.minute');
+    var second = document.querySelector('.second');
+
+    var inputTime = +new Date('2021-6-22 22:00:00'); //用户输入时间总的毫秒数
+
+    //直接调用一次防止刷新时有空白
+    countDown();
+    setInterval(countDown,);
+
+    function countDown() {
+        var nowTime = +new Date(); //当前时间总毫秒数
+
+        var times = (inputTime - nowTime) / 1000; //剩余时间总的毫秒数
+
+        var h = parseInt(times / 60 / 60 % 24);
+        h = h<10?'0'+h:h;
+        hour.innerHTML = h;
+        var m = parseInt(times / 60 % 60);
+        m = m<10?'0'+m:m;
+        minute.innerHTML = m;
+        var s = parseInt(times % 60);
+        s = s<10?'0'+s:s;
+        second.innerHTML = s;
+    }
+
+
+</script>
+</html>

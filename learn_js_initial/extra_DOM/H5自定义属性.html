@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H5自定义属性</title>
+    <script>
+        //H5规定 自定义属性data-开头作为属性名并赋值
+        //例如： <div data-index="1"></div>
+
+    </script>
+</head>
+<body>
+<div data-index="1" data-time="20" data-list-name="icrani"></div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    console.log(div.getAttribute('data-index'));
+    //H5新增 【i11之后才支持】
+    console.log(div.dataset);
+    console.log(div.dataset.index);
+    console.log(div.dataset['index']);
+
+    console.log(div.dataset.listName);
+    console.log(div.dataset['listName']);
+
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除节点</title>
+</head>
+<body>
+
+<button>删除</button>
+<ul>
+    <li>熊大</li>
+    <li>熊二</li>
+    <li>光头</li>
+</ul>
+</body>
+<script>
+    //删除元素 node。removeChild()
+    var ul = document.querySelector('ul');
+    var btn = document.querySelector('button');
+
+    // ul.removeChild(ul.children[0]);
+
+    //点击按钮依次删除
+    btn.onclick = function () {
+        if (ul.children.length ===0){
+            this.disabled = 'true';
+        }else {
+            ul.removeChild(ul.children[0]);
+            if (ul.children.length ===0){
+                btn.disabled = 'true';
+            }
+        }
+    }
+
+
+</script>
+</html>

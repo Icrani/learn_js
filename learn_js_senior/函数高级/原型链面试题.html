@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //1
+    function A() {
+
+    }
+    A.prototype.n = 1
+    const b = new A()
+    A.prototype = {
+        n:2,
+        m:3
+    }
+
+    const c = new A()
+
+    console.log(b.n,b.m,c.n,c.m)
+
+    //2
+    // const F = function () {}
+    function F() {}
+    Object.prototype.a = function () {
+        console.log('a()')
+    }
+    Function.prototype.b = function () {
+        console.log('b()')
+    }
+    const f = new F()
+
+    f.a()
+    f.b
+    F.a()
+    F.b()
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+方式6：构造函数+原型的组合
+    *套路：自定义构造函数，属性在函数中初始化，方法添加到原型上
+    *适用场景：需要创建多个类型确定的对象
+-->
+</body>
+<script>
+    function Person(name, age) {//在构造函数中只初始化一般函数
+        this.name = name
+        this.age = age
+    }
+    //方法放在原型上公用
+    Person.prototype.setName = function (name) {
+        this.name = name
+    }
+
+    let p1 = new Person('Tom',23)
+    let p2 = new Person('Jack',13)
+    console.log(p1,p2)
+</script>
+</html>

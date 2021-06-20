@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击隐藏</title>
+    <style>
+        .box{
+            width: 610px;
+            position: relative;
+            display: block;
+        }
+
+        .close-btn{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .close-btn:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img id="pic" src="../img/3.jpg" alt="">
+    <i class="close-btn">×</i>
+</div>
+<script>
+    var btn = document.querySelector('.close-btn');
+    var box = document.querySelector('.box');
+    btn.onclick = function () {
+        box.style.display = "none";
+    }
+
+</script>
+</body>
+</html>

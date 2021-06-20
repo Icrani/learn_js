@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机数[包括边界]</title>
+    <script>
+        //得到两个数之间的随机数 并且 包含这2个整数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        console.log(getRandom(1,10));
+
+        //随机点名
+        var arr= ['张三','张三丰','张三疯','李四','莉丝丝'];
+        console.log(arr[getRandom(0,arr.length-1)]);
+    </script>
+
+    <script>
+        //猜数字
+        var random = getRandom(1,10);
+
+        while (true){
+            var num = prompt("猜数字（1-10）");
+            if (num>random){
+                alert("你猜大了")
+            }
+            else if (num<random){
+                alert("你猜小了")
+            }
+            else {
+                alert("你猜中了")
+                break;
+            }
+        }
+    </script>
+
+</head>
+<body>
+</body>
+</html>
